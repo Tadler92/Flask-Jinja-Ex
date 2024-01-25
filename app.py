@@ -16,4 +16,5 @@ def show_homepage():
 @app.route('/story')
 def show_madlib():
     """Shows the Madlib story we just created from the homepage"""
-    return render_template('madlib.html')
+    madlib = story.generate(request.args)
+    return render_template('madlib.html', madlib=madlib)
