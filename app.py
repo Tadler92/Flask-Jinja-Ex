@@ -13,7 +13,7 @@ def show_homepage():
     """Brings us to the homepage of the application"""
     story_index = stories_dict.keys()
     story_name = list(stories_dict.values())
-    return render_template('home.html', stories=story_name, index=story_index)
+    return render_template('index.html', stories=story_name, index=story_index)
 
 @app.route('/word-choice')
 def choose_words():
