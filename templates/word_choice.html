@@ -6,8 +6,10 @@
 <h1>Madlibs</h1>
 <form action="/story">
   {% for prompt in prompts %}
-  <label for="{{prompt}}">{{prompt}}:</label>
-  <input type="text" id="{{prompt}}" placeholder="Enter a {{prompt}}" name="{{prompt}}">
+  <div class="prompt">
+    <label for="{{prompt}}">{{prompt}}:</label>
+    <input type="text" id="{{prompt}}" placeholder="Enter a {{prompt}}" name="{{prompt}}" required>
+  </div>
   {% endfor %}
   <button>Submit</button>
 </form>

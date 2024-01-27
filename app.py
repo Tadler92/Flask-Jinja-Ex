@@ -7,11 +7,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "chickenzarecool21837"
 debug = DebugToolbarExtension(app)
 
-STORIES = {
-    'Medieval': 'hello',
-    'Modern': 'hello',
-    'Futuristic': 'hello',
-}
 
 @app.route('/')
 def show_homepage():
@@ -19,7 +14,6 @@ def show_homepage():
     story_index = stories_dict.keys()
     story_name = list(stories_dict.values())
     return render_template('home.html', stories=story_name, index=story_index)
-    # return render_template('home.html', stories=stories)
 
 @app.route('/word-choice')
 def choose_words():
@@ -31,7 +25,6 @@ def choose_words():
 @app.route('/story')
 def show_madlib():
     """Shows the Madlib story we just created from the homepage"""
-    # print(request.args.keys())
     for story in stories:
         if story.prompts[0] == list(request.args.keys())[0]:
           madlib = story.generate(request.args)
