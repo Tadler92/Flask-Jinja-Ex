@@ -43,3 +43,31 @@ story = Story(
     """Once upon a time in a long-ago {place}, there lived a
        large {adjective} {noun}. It loved to {verb} {plural_noun}."""
 )
+
+medieval = Story(
+    ["place", "noun", "verb", "adjective", "plural_noun"],
+    """Once upon a time in a long-ago {place}, there lived a
+       large {adjective} {noun}. It loved to {verb} {plural_noun}."""
+)
+
+modern = Story(
+    ["city", "famous_building", "clothing_item", "number"],
+    """This summer, I went to {city}, and had a blast visiting the {famous_building}!  I just wish it wasn't {number} degrees when I went; I had to wear a {clothing_item} the entire time...."""
+)
+
+futuristic = Story(
+    ["celestial_body", "tiny_insects", "number", "adjective", "person", 'breakfast_food'],
+    """On the distant planet of {celestial_body}, there lived a
+       group of large, {adjective} {tiny_insects}. We were at war with them for {number} days.  We were just lucky to have had {person} on our side.  Without them, the human race would have become the {breakfast_food} of the galaxy!"""
+)
+
+
+stories_dict = {
+    0: 'Medieval',
+    1: 'Modern',
+    2: 'Futuristic',
+    # 'Medieval': medieval,
+    # 'Modern': modern,
+    # 'Futuristic': futuristic,
+}
+stories = [medieval, modern, futuristic]

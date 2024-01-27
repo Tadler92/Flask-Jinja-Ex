@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title%}Madlibs Form{% endblock %}
+{% block title%}Madlibs Story Choice{% endblock %}
 
 {% block content %}
-<h1>Madlibs</h1>
-<form action="/story">
-  {% for prompt in prompts %}
-  <label for="{{prompt}}">{{prompt}}:</label>
-  <input type="text" id="{{prompt}}" placeholder="Enter a {{prompt}}" name="{{prompt}}">
-  {% endfor %}
+<h1>Madlib Stories</h1>
+<form action="/word-choice">
+  <label for="madlib_stories">Choose a story:</label>
+  <select name="story" id="madlib_stories">
+    <option style="display: none;"></option>
+    {% for i in index %}
+    {% if i == stories.index(stories[i]) %}
+    <option value="{{i}}">{{stories[i]}}</option>
+    {% endif %}
+    {% endfor %}
+  </select>
   <button>Submit</button>
 </form>
 {% endblock %}
